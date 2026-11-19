@@ -28,4 +28,8 @@ Pilot one MIT distributed systems lecture. Use four short English episodes with 
 - [Render script](../scripts/render-mapreduce-pilot.py). Run `python scripts/render-mapreduce-pilot.py` with Pillow, DejaVu Sans, and FFmpeg built with Flite and libx264. The script produces a 55-second English MP4 with synthetic narration and on-screen captions.
 - Verification: checked event order and deterministic output against §3.3 of Dean and Ghemawat (2004). The MP4 decoded without errors and contains H.264 video and AAC audio. Original recording alignment is still unverified.
 
-Next step: try the episode and answer the prediction in English. Use that feedback to decide whether to render the remaining three episodes.
+## Narration revision
+
+- [Production script](../lessons/mapreduce-narration-v2.md) adds the reason to distribute a job and explains Map, Shuffle and Reduce before the failure scene. Includes delivery cues, visual beats and a five-second prediction pause.
+- User rejected the original Flite voice. Use a human read with English phrasing, emphasis and deliberate pauses. No replacement audio or MP4 has been recorded.
+- Original recording verification remains pending. Search surfaced a transcript associated with a different video ID. Obtain captions or audio for cQP8WApzIQQ and check the introduction, the word-count example and the failure explanation before recording.
