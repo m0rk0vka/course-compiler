@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MapReduce • Worker failure</title>
+<style>body{background:#101b2b;color:#f4f8ff;font:1rem system-ui;margin:0}main{max-width:720px;margin:auto;padding:2rem 1rem}small,a{color:#81dbca}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:1.5rem 0}.tile{background:#1e3047;padding:1rem;border-radius:.8rem}.tile strong{display:block;margin-bottom:.4rem}button{font:inherit;border-radius:.5rem;padding:.6rem 1rem;border:0;margin-right:.4rem}button:disabled{opacity:.5}footer{margin-top:2rem}</style>
+<main><small>Distributed systems · MapReduce</small><h1 id="title"></h1><div class="grid" id="grid"></div><p id="explain" aria-live="polite"></p><button id="back">Back</button><button id="next">Next</button><footer><a href="https://pdos.csail.mit.edu/6.824/papers/mapreduce.pdf">Dean &amp; Ghemawat (2004), §3.3</a> · <a href="https://pdos.csail.mit.edu/6.5840/labs/lab-mr.html">MIT Lab 1</a></footer></main>
+<script>
+const scenes=[
+['Map output is ready','Each reducer needs its own partition from the same map task.','P1 and P2 ready','Idle','Waiting for P1','Waiting for P2'],
+['Reducer 1 fetches P1','Reducer 2 has yet to fetch P2.','Serving partitions','Idle','Has P1 from A','Waiting for P2'],
+['Worker A crashes','Predict: which reducer needs data after this crash? What could the coordinator do?','Unreachable','Idle','Has P1 from A','Waiting for P2'],
+['Worker B reruns the task','Reducer 2 fetches from B. Reducer 1 keeps the data it already fetched. With a deterministic map function, both attempts produce equivalent output for the same input.','Unreachable','P1 and P2 rebuilt','Keeps P1 from A','Has P2 from B']];
+let i=0;const get=id=>document.getElementById(id),back=get('back'),next=get('next');
+function draw(){const [title,explain,...states]=scenes[i];get('title').textContent=title;get('explain').textContent=explain;get('grid').replaceChildren(...states.map((state,j)=>{const tile=document.createElement('div'),label=document.createElement('strong');tile.className='tile';label.textContent=['Worker A','Worker B','Reducer 1','Reducer 2'][j];tile.append(label,state);return tile}));back.disabled=i===0;next.textContent=['Next','Next','Reveal answer','Replay'][i]}
+back.onclick=()=>{i--;draw()};next.onclick=()=>{i=(i+1)%scenes.length;draw()};draw();
+</script></html>
