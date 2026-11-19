@@ -1,6 +1,6 @@
 # MapReduce — recording script
 
-Target: about two minutes. Read conversationally, around 125–140 words per minute. Directions in brackets are silent. Leave five seconds after the prediction question. Record each scene as a separate take. The first pilot's Flite voice was rejected. This version is ready for a human read once the recording comparison is resolved.
+Target: about two minutes. Read conversationally, around 125–140 words per minute. Directions in brackets are silent. Leave five seconds after the prediction question. Record each scene as a separate take. The first pilot's Flite voice was rejected. Try an expressive English voice in ElevenLabs Studio on the audition excerpt before rendering the episode.
 
 ## Scene 1 · Why use MapReduce?
 
@@ -36,6 +36,21 @@ Here’s the trick. All three “go” records have to meet at the same reducer,
 
 ## Recording comparison
 
-- [Target video: MIT Lecture 1, Spring 2020](https://www.youtube.com/watch?v=cQP8WApzIQQ). The page was identified, but direct access timed out and the audio and captions remain unverified. A publicly indexed transcript found during the search points to a different YouTube video ID (WtZ7pcRSkOA), so it cannot establish timing or wording for this recording.
-- [Official MIT notes, Spring 2026](https://pdos.csail.mit.edu/6.5840/notes/l01.txt). Cross-check the purpose of the framework and the word-count data flow.
-- [Dean and Ghemawat, 2004](https://pdos.csail.mit.edu/6.824/papers/mapreduce.pdf). Sections 2–3 explain the programming model and execution. Section 3.3 covers local intermediate files, rerunning completed Map tasks and using the replacement output when a reducer has yet to fetch its partition.
+The [Spring 2021 lecture](https://www.youtube.com/watch?v=WtZ7pcRSkOA) is the reference recording for this adaptation. These entry points come from [transcript-based notes](https://jingzechen.github.io/courses/mit-6824-s21/lectures/001/). Direct download of the English SRT timed out, so timing and wording have not been independently checked against the audio.
+
+- [46:04](https://www.youtube.com/watch?v=WtZ7pcRSkOA&t=2764s) — why Google needed a framework for large batch jobs.
+- [50:42](https://www.youtube.com/watch?v=WtZ7pcRSkOA&t=3042s) — word-count walkthrough. MIT uses three files. Our two-file example is an original simplification.
+- [53:21](https://www.youtube.com/watch?v=WtZ7pcRSkOA&t=3201s) — grouping by key and summing values.
+- [1:09:55](https://www.youtube.com/watch?v=WtZ7pcRSkOA&t=4195s) — retry and duplicate execution discussion. The two-reducer recovery scene illustrates [Dean and Ghemawat (2004), §3.3](https://pdos.csail.mit.edu/6.824/papers/mapreduce.pdf).
+
+## Voice audition
+
+Paste this excerpt into ElevenLabs Studio with a conversational English voice. Try Eleven v3. The tags are delivery cues.
+
+> [curious] How would you count every word in an archive that's too big for one machine to process in time?
+>
+> [short pause] Give each worker a different set of files. Now they can work in parallel. But someone still has to bring the results together.
+>
+> [thoughtful] And if a worker disappears halfway through, someone has to decide what to run again. That's the job MapReduce takes off your hands.
+
+Export the audition as audio. For the full pilot, insert the five-second prediction pause in the edit. No ElevenLabs audio was generated in this session.
