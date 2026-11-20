@@ -31,5 +31,9 @@ Pilot one MIT distributed systems lecture. Use four short English episodes with 
 ## Narration revision
 
 - [Production script](../lessons/mapreduce-narration-v2.md) adds the reason to distribute a job and explains Map, Shuffle and Reduce before the failure scene. Includes delivery cues, visual beats and a five-second prediction pause.
-- User rejected the original Flite voice. Use a human read with English phrasing, emphasis and deliberate pauses. No replacement audio or MP4 has been recorded.
+- User rejected the original Flite voice. Use a human read or an approved neural voice with clear phrasing, emphasis and deliberate pauses. No replacement MP4 has been rendered.
 - Original recording verification remains pending. Search surfaced a transcript associated with a different video ID. Obtain captions or audio for cQP8WApzIQQ and check the introduction, the word-count example and the failure explanation before recording.
+
+## Kokoro audition
+
+The public Kokoro demo generated a 17-second English WAV in the Work Mode browser using the Heart voice at normal speed, without registration. Verified PCM audio at 24 kHz and successful decoding. This is a voice and pacing audition for the introduction. The full narration and prediction pause still need to be assembled after listening feedback.
